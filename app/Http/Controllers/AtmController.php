@@ -18,4 +18,11 @@ class AtmController extends Controller
         $bankAccount->fill($request->all())->save();
         return response()->json($bankAccount);
     }
+
+    public function balanceReference($accountId)
+    {
+        $query = BankAccount::query()->whereId($accountId);
+        $bankAccount = $query->get();
+        return response()->json($bankAccount);
+    }
 }
