@@ -16,3 +16,6 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('createToken', 'App\Http\Controllers\AtmController@createToken');
+Route::post('bankTrading/accountOpening', 'App\Http\Controllers\AtmController@accountOpen');
