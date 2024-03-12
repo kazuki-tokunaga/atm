@@ -21,3 +21,4 @@ Route::get('createToken', 'App\Http\Controllers\AtmController@createToken');
 Route::post('bankTrading/accountOpening', 'App\Http\Controllers\AtmController@accountOpen');
 Route::get('bankTrading/{account_id}', 'App\Http\Controllers\AtmController@balanceReference');
 //{account_id}がコントローラーのメソッドの引数に渡される。
+Route::post('bankTrading/depositMoney/{account_id}', 'App\Http\Controllers\AtmController@deposit');
