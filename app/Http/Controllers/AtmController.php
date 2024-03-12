@@ -14,7 +14,7 @@ class AtmController extends Controller
 
     public function accountOpen(Request $request)
     {
-        $bankAccount = new bankAccounts();
+        $bankAccount = new BankAccount();
         $bankAccount->fill($request->all())->save();
         return response()->json($bankAccount);
     }
