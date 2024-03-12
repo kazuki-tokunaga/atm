@@ -22,3 +22,4 @@ Route::post('bankTrading/accountOpening', 'App\Http\Controllers\AtmController@ac
 Route::get('bankTrading/{account_id}', 'App\Http\Controllers\AtmController@balanceReference');
 //{account_id}がコントローラーのメソッドの引数に渡される。
 Route::post('bankTrading/depositMoney/{account_id}', 'App\Http\Controllers\AtmController@deposit');
+Route::post('bankTrading/withdrawal/{account_id}', 'App\Http\Controllers\AtmController@withdrawal');
