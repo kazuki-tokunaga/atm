@@ -29,8 +29,7 @@ class AtmController extends Controller
     public function deposit($accountId, Request $request)
     {
         //BankAccountモデルを利用して口座IDで絞り込み、対象の口座を取得する。
-        $query = BankAccount::query()->whereId($accountId);
-        $bankAccount = $query->get();
+        $bankAccount = BankAccount::find($accountId);
 
         //残高に対して、リクエストされた金額を加算し更新する。
         $newBalance = $bankAccount->deposit_balance + $request->amount;
@@ -38,6 +37,6 @@ class AtmController extends Controller
         $bankAccount->save();
 
         //json形式で取得したBankAccountモデルの残高を返却する。
-        return response()->json($balance);
+        return response()->json($newBalance);
     }
 }
